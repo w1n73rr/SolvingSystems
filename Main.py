@@ -28,8 +28,27 @@ B = np.array([
 # Решение системы уравнений
 phi = np.linalg.solve(A, B)
 
+# Решение для сил токов
+I1 = (phi[0]-phi[1]+E1)/R1
+I2 = (0-phi[2]+E2)/R2
+I3 = (phi[1])/R3
+I4 = (phi[2]-phi[1]+0)/R4
+I5 = (phi[2])/R5
+I6 = (phi[1]-phi[0]+0)/R6
+I7 = (phi[0])/R7
+
 # Вывод решения
 print("Решения для φ1, φ2 и φ3:")
 print(f"φ1 = {phi[0]:.4f} В")
 print(f"φ2 = {phi[1]:.4f} В")
 print(f"φ3 = {phi[2]:.4f} В")
+
+print("\nРассчитанные значения токов:")
+print(f"I1 = {I1:.4f} A")
+print(f"I2 = {I2:.4f} A")
+print(f"I3 = {I3:.4f} A")
+print(f"I4 = {I4:.4f} A")
+print(f"I5 = {I5:.4f} A")
+print(f"I6 = {I6:.4f} A")
+print(f"I7 = {I7:.4f} A")
+
